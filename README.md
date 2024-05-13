@@ -7,9 +7,9 @@ filebrowser provides a file managing interface within a specified directory and 
 
 #### Table of Contents
 
-    - Screenshots
-    - Features
-    - Usage
+- Screenshots
+- Features
+ - Usage
     - Docker
     - docker-compose
     - Nginx
