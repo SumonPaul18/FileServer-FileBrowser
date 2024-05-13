@@ -60,6 +60,28 @@ Minimal docker-compose.yml may look like this:
           - FB_BASEURL=/filebrowser
       restart: always
  Simply run:
-       docker-compose up
+####
+    docker-compose up
+
+Ports description
+8080 - default filebrowser port
+Supported environment variables
+The environment variables are prefixed by FB_ followed by the option name in caps. So to set "database" via an env variable, you should set FB_DATABASE. The list of avalable options can be found here.
+
+Supported volumes
+/data - Data directory to browse
+/config - filebrowser.db location
+Attaching multiple directories
+If you want to attach multiple directories you need to mount them as subdirectories of the data directory inside of the container (/data by default):
+
+docker run \
+    -v /path/to/music:/data/music \
+    -v /path/to/movies:/data/movies \
+    -v /path/to/photos:/data/photos \
+    hurlenko/filebrowser
+Building
+git clone https://github.com/hurlenko/filebrowser-docker
+cd filebrowser-docker
+docker build -t hurlenko/filebrowser .
 
   
