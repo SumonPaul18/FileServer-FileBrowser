@@ -60,6 +60,6 @@ Minimal docker-compose.yml may look like this:
           - FB_BASEURL=/filebrowser
       restart: always
  Simply run:
-     docker-compose up
+       docker-compose up
 
   
