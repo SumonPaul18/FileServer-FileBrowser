@@ -22,23 +22,27 @@ filebrowser provides a file managing interface within a specified directory and 
   ![Preview](https://user-images.githubusercontent.com/5447088/50716739-ebd26700-107a-11e9-9817-14230c53efd2.gif)
 
   #### Features
-  Confgurable via environment variables
-Can be run using different user
-Supports multiple architectures, tested on Ubuntu 18.04 (amd64), Rock64 🍍 (arm64) and Raspberry Pi 🍓 (arm32)
+  - Confgurable via environment variables
+  - Can be run using different user
+  - Supports multiple architectures, tested on Ubuntu 18.04 (amd64), Rock64 🍍 (arm64) and Raspberry Pi 🍓 (arm32)
 
 ### Usage
 
 #### Docker
     docker run -d --name filebrowser -p 80:8080 hurlenko/filebrowser
-
+    
 To run as current user and to map custom volume locations use:
+Create Directory:
+####
+    mkdir -p /root/fileserver/data && mkdir -p /root/fileserver/config
 ####
     docker run -d \
     --name filebrowser \
     --user $(id -u):$(id -g) \
     -p 8080:8080 \
-    -v /DATA_DIR:/data \
-    -v /CONFIG_DIR:/config \
+    -v /root/fileserver/data:/data \
+    -v /root/fileserver/config:/config \
+    -e TZ="Asia/Dhaka" \
     -e FB_BASEURL=/filebrowser \
     hurlenko/filebrowser
 
