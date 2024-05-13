@@ -44,8 +44,8 @@ To run as current user and to map custom volume locations use:
 
 #### docker-compose
 Minimal docker-compose.yml may look like this:
-#
- version: "3"
+####
+    version: "3"
 
 services:
   filebrowser:
@@ -59,5 +59,6 @@ services:
     environment:
       - FB_BASEURL=/filebrowser
     restart: always
+ 
 
   
