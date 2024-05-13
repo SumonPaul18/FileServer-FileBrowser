@@ -47,18 +47,18 @@ Minimal docker-compose.yml may look like this:
 ####
     version: "3"
 
-services:
-  filebrowser:
-    image: hurlenko/filebrowser
-    user: "${UID}:${GID}"
-    ports:
-      - 443:8080
-    volumes:
-      - /DATA_DIR:/data
-      - /CONFIG_DIR:/config
-    environment:
-      - FB_BASEURL=/filebrowser
-    restart: always
+    services:
+      filebrowser:
+        image: hurlenko/filebrowser
+        user: "${UID}:${GID}"
+        ports:
+          - 443:8080
+        volumes:
+          - /DATA_DIR:/data
+          - /CONFIG_DIR:/config
+      environment:
+          - FB_BASEURL=/filebrowser
+      restart: always
  
 
   
